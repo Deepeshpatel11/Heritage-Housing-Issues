@@ -7,8 +7,9 @@ from app_pages import (
     model_performance
 )
 
-# --- Sidebar Navigation ---
+# Streamlit Config
 st.set_page_config(page_title="Heritage Housing Dashboard", layout="wide")
+
 st.sidebar.title("🏡 Heritage Housing Dashboard")
 page = st.sidebar.radio(
     "Navigate",
