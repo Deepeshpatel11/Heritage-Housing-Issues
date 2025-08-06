@@ -1,29 +1,25 @@
-# Ignore local data
-*.csv
-*.xlsx
-*.pickle
-*.pkl
-*.joblib
-*.h5
-*.hdf5
-*.parquet
-*.feather
-
-# Ignore notebooks and raw data
-*.ipynb
+# Ignore datasets and raw data
 data/
 datasets/
-notebooks/
+*.csv
+*.xlsx
+*.xls
+*.parquet
 
-# Ignore cache
-__pycache__/
-.ipynb_checkpoints/
-*.log
-
-
-# Ignore venvs
-venv/
-.venv/
-env/
-
+# Ignore local models (upload to cloud instead)
 models/house_price_model_rf.pkl
+
+
+# Ignore Jupyter notebooks
+*.ipynb
+jupyter_notebooks/
+
+# Ignore development & cache files
+__pycache__/
+*.log
+*.tmp
+*.zip
+*.tar.gz
+.DS_Store
+.env/
+venv/
