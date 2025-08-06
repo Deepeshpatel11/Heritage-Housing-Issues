@@ -1,1 +1,11 @@
-models/house_price_model_rf.pkl
+# Ignore notebooks
+*.ipynb
+.ipynb_checkpoints/
+
+# Ignore caches and virtual envs
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+.env
