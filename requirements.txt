@@ -10,7 +10,7 @@ plotly==6.2.0
 
 # Machine Learning
 scikit-learn==1.7.1
-xgboost==2.0.3    # CPU-only, lightweight
+xgboost-cpu   # CPU-only, lightweight
 
 # Streamlit and dependencies
 streamlit==1.48.0
