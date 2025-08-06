@@ -1,0 +1,26 @@
+# Ignore local data
+*.csv
+*.xlsx
+*.pickle
+*.pkl
+*.joblib
+*.h5
+*.hdf5
+*.parquet
+*.feather
+
+# Ignore notebooks and raw data
+*.ipynb
+data/
+datasets/
+notebooks/
+
+# Ignore cache
+__pycache__/
+.ipynb_checkpoints/
+*.log
+
+# Ignore venvs
+venv/
+.venv/
+env/
