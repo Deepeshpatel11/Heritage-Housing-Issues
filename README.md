@@ -333,3 +333,8 @@ While the application functions as intended and meets all business requirements,
 Despite these known limitations, none of them affect the core functionality of the project or prevent users from gaining valuable insights and predictions.
 
 ---
+
+## Tests
+
+**Code Quality Check**  
+All Python files have passed the [PEP8 linter test](https://pep8ci.herokuapp.com/).
