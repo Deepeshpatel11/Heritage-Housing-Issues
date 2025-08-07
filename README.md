@@ -258,11 +258,15 @@ The design follows a clear, modular structure with five key pages:
 
 ### Page 1: Project Summary
 
+![Project Summary Page](test_evidence/img/project_summary_page.png)
+
 * Provides a brief overview of the project scope and objectives
 * Describes the datasets used and outlines the client’s business requirements
 * Highlights the structure of the Streamlit dashboard for easy navigation
 
 ### Page 2: Correlation Insights
+
+![Correlation Insights Page](test_evidence/img/correlation_insights_page.png)
 
 * Displays the top features most strongly correlated with `SalePrice`
 * Uses Pearson correlation and Predictive Power Score (PPS)
@@ -274,6 +278,8 @@ The design follows a clear, modular structure with five key pages:
 
 ### Page 3: Price Prediction
 
+![Price Prediction Page](test_evidence/img/price_prediction_page.png)
+
 * Displays the predicted sale prices for the 4 inherited houses
 * Calculates and shows the total combined value of the inherited portfolio
 * Includes an interactive form for users to input any new house details
@@ -281,6 +287,8 @@ The design follows a clear, modular structure with five key pages:
 * Predicts and displays the estimated sale price immediately upon form submission
 
 ### Page 4: Hypothesis Validation
+
+![Model Prediction Page](test_evidence/img/model_prediction_page.png)
 
 * Revisits each original hypothesis from the analysis phase
 * Describes how each was tested using data exploration and modeling
@@ -338,3 +346,103 @@ Despite these known limitations, none of them affect the core functionality of t
 
 **Code Quality Check**  
 All Python files have passed the [PEP8 linter test](https://pep8ci.herokuapp.com/).
+
+---
+
+## Technologies Used
+
+| Technology       | Purpose                                           | Why It Was Chosen |
+|------------------|---------------------------------------------------|-------------------|
+| **Python**       | Core programming language for data analysis, ML, and app deployment | Easy to read, versatile, with a strong ecosystem for data science |
+| **Jupyter Notebooks** | Interactive environment for prototyping models and visualizations | Supports iterative exploration and documentation in one place |
+| **Pandas & NumPy** | Data manipulation and numerical computations | Efficient handling of tabular data and array operations |
+| **Matplotlib & Seaborn** | Data visualization and exploratory analysis | High-quality, customizable visualizations for EDA and insight communication |
+| **Scikit-learn** | ML pipeline, preprocessing, training baseline models | Provides standardized tools for modeling and evaluation |
+| **XGBoost**      | Final production model (regression) | Excellent accuracy, handles non-linear features, and performs well on structured data |
+| **Streamlit**    | Web-based interactive dashboard | Transforms Python scripts into usable apps quickly with minimal front-end code |
+| **Heroku**       | Cloud deployment of the dashboard | Easy deployment pipeline, free-tier hosting, integrates well with GitHub |
+| **Git & GitHub** | Version control, collaboration, issue tracking | Enables clean project management, backups, and team collaboration |
+
+These technologies worked together to deliver a complete, end-to-end machine learning solution—from raw data ingestion to user-facing predictions via a web interface.
+
+## Deployment Instructions
+
+The Heritage Housing Issues dashboard was deployed using **Heroku**, a platform-as-a-service that supports easy deployment of Python-based web apps. The deployed application is live and accessible at:
+
+🔗 [Live App on Heroku](https://heritage-housing-issues-app-2516705cc4a8.herokuapp.com/)
+
+Follow the steps below if you want to deploy your own version of the dashboard:
+
+### Prerequisites
+
+- A free [Heroku](https://www.heroku.com/) account
+- A linked [GitHub](https://github.com/) repository with this project
+- Your project must contain the following files:
+  - `dashboard.py` (main Streamlit app)
+  - `requirements.txt` (with all necessary packages)
+  - `setup.sh` (optional, to configure Streamlit port)
+  - `Procfile` (to tell Heroku how to run your app)
+  - `.slugignore` (to keep slug size < 500MB)
+
+
+### Step-by-Step Deployment on Heroku (via Web Interface)
+
+1. **Login to Heroku**  
+   Go to [https://dashboard.heroku.com](https://dashboard.heroku.com) and log into your account.
+
+2. **Create a New App**
+   - Click on **"New"** > **"Create new app"**
+   - Give your app a unique name, e.g., `heritage-housing-issues-app`
+   - Choose a region (e.g., Europe)
+
+3. **Connect GitHub Repository**
+   - Go to the **Deploy** tab
+   - Select **GitHub** as the deployment method
+   - Search for your repo (e.g., `Heritage-Housing-Issues`) and connect it
+
+4. **Configure Build Settings**
+   
+   * Ensure your repo includes:
+     * `requirements.txt` (lists all dependencies)
+     * `Procfile` with the following line:
+       ```
+       web: sh setup.sh && streamlit run dashboard.py
+       ```
+     * `setup.sh` with:
+       ```sh
+       mkdir -p ~/.streamlit/
+
+       echo "\
+       [server]\n\
+       headless = true\n\
+       port = $PORT\n\
+       enableCORS = false\n\
+       \n\
+       " > ~/.streamlit/config.toml
+
+5. **Deploy App**
+   - Back on the Heroku **Deploy** tab:
+     - Select **"Enable Automatic Deploys"** (optional)
+     - Click **"Deploy Branch"**
+   - Heroku will build and launch your app
+
+6. **Access Live App**
+   - Once deployed, click **"Open App"**
+   - Your Streamlit dashboard will now be live on the web
+
+## Acknowledgements
+
+This project was completed as part of the **Code Institute’s Predictive Analytics Portfolio Project**, under the Data Analytics program.
+
+Special thanks to:
+
+- **Code Institute** for providing the structure, learning material, and guidance that made this project possible.
+- **Kaggle** for the open access to the [Ames Housing Dataset](https://www.kaggle.com/competitions/house-prices-advanced-regression-techniques), which served as the foundation for this analysis.
+- **Streamlit** for their excellent Python-based framework, enabling fast and intuitive dashboard development.
+- **Heroku** for providing an accessible and easy-to-use deployment platform.
+- Fellow learners and the Slack community at Code Institute for feedback and troubleshooting support during development.
+- [Scikit-learn](https://scikit-learn.org/), [XGBoost](https://xgboost.readthedocs.io/), and [Pandas](https://pandas.pydata.org/) open-source communities for the tools used throughout this project.
+
+This project was developed in a cloud-based IDE using **GitHub Codespaces**, which enabled a smooth and efficient development workflow.
+
+All tools, datasets, and resources used are open-source and publicly available.
