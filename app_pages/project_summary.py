@@ -1,15 +1,15 @@
 import streamlit as st
 
+
 def app():
     st.title("📄 Project Summary")
-    
     st.markdown("""
     ### Heritage Housing Issues – Predictive Analytics
-    
+
     **Business Goal**:
     - Identify features most correlated with house sale prices.
     - Predict the total value of **4 inherited houses** in Ames, Iowa.
-    
+
     **Workflow (CRISP-DM)**:
     1. **Data Collection** from Kaggle
     2. **Data Cleaning & Feature Engineering**:
@@ -26,5 +26,6 @@ def app():
        - Visual insights and interactive predictions
 
     **Key Deliverable**:
-    - Data-driven pricing insights and a **Streamlit dashboard** for real-time prediction.
+    - Data-driven pricing insights
+    and a **Streamlit dashboard** for real-time prediction.
     """)

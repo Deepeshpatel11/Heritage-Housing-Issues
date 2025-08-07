@@ -3,9 +3,9 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
+
 def app():
     st.title("📈 Model Performance")
-
     st.markdown("""
     **Final Model Comparison:**
     - Random Forest: R² ~ 0.87, RMSE ~$31,238
@@ -30,7 +30,9 @@ def app():
     st.pyplot(fig)
 
     st.subheader("Feature Importance from XGBoost (Top 5)")
-    top_features = ['OverallQual', 'GrLivArea', 'GarageArea', 'TotalBsmtSF', '1stFlrSF']
+    top_features = [
+        'OverallQual',
+        'GrLivArea', 'GarageArea', 'TotalBsmtSF', '1stFlrSF']
     importances = [0.32, 0.25, 0.15, 0.12, 0.08]
 
     fig, ax = plt.subplots()
